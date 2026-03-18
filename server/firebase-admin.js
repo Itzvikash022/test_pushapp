@@ -6,9 +6,14 @@ import path from 'path';
 dotenv.config();
 
 const serviceAccountPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH;
+let resolvedPath = serviceAccountPath;
 
-if (serviceAccountPath && fs.existsSync(serviceAccountPath)) {
-  const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
+if (serviceAccountPath && !path.isAbsolute(serviceAccountPath)) {
+  resolvedPath = path.resolve(serviceAccountPath);
+}
+
+if (resolvedPath && fs.existsSync(resolvedPath)) {
+  const serviceAccount = JSON.parse(fs.readFileSync(resolvedPath, 'utf8'));
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
