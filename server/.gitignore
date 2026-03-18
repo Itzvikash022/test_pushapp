@@ -1,0 +1,4 @@
+node_modules/
+.env
+# IMPORTANT: Never commit your firebase service account key!
+config/firebase-service-account.json

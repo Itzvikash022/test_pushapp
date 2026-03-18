@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "503210630799",
+    "project_id": "test-f3258",
+    "storage_bucket": "test-f3258.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503210630799:android:ca311e6f0e26b1f55e1afa",
+        "android_client_info": {
+          "package_name": "com.pushapp.broadcast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5dm_p-qIarBD7bMHJ1-d5z3FWXRmz8GM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

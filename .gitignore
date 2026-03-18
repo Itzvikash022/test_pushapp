@@ -1,0 +1,10 @@
+node_modules/
+.env
+# Ignore the generated Android folder if you don't want to track it
+# But for GitHub Actions build to work easily without re-running 'cap add', 
+# it's often better to track it (minus build artifacts).
+client/dist/
+server/node_modules/
+client/node_modules/
+.DS_Store
+Thumbs.db
