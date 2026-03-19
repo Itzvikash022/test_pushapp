@@ -1,7 +1,12 @@
 import { PushNotifications } from '@capacitor/push-notifications';
+import { Capacitor } from '@capacitor/core';
 import { registerToken } from './api';
 
 export const setupPushNotifications = async () => {
+  if (Capacitor.getPlatform() === 'web') {
+    console.warn('Push Notifications are not supported in the browser. Use a native device.');
+    return;
+  }
   let permStatus = await PushNotifications.checkPermissions();
 
   if (permStatus.receive === 'prompt') {

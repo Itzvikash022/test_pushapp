@@ -1,8 +1,10 @@
+import { Capacitor } from '@capacitor/core';
 import axios from 'axios';
 
-// CHANGE THIS to your laptop's local IP (e.g., http://192.168.1.15:5000) 
-// for testing on physical Android devices over the same Wi-Fi.
-const API_URL = 'http://10.0.2.2:5000'; 
+const isBrowser = typeof window !== 'undefined' && !window.hasOwnProperty('Capacitor');
+const API_URL = isBrowser || Capacitor.getPlatform() === 'web' 
+  ? 'http://localhost:5000' 
+  : 'https://push-notification-server-6mdd.onrender.com'; // REPLACE with your Render URL
 
 
 export const registerToken = async (token: string) => {
